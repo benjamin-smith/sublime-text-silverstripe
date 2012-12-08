@@ -1,0 +1,12 @@
+<snippet>
+    <content><![CDATA[<% if ${1:condition} %>
+    ${2:true}
+<% else_if ${3:other_condition} %>
+    ${4:true}
+<% else %>
+    ${5:false}
+<% end_if %>]]></content>
+    <tabTrigger>ifelseif</tabTrigger>
+    <scope>source.ss</scope>
+    <description>SilverStripe if/else_if/else statement</description>
+</snippet>

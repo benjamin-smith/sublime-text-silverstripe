@@ -1,0 +1,8 @@
+<snippet>
+    <content><![CDATA[<% control ${1:condition} %>
+    ${2:content}
+<% end_control %>]]></content>
+    <tabTrigger>control</tabTrigger>
+    <scope>source.ss</scope>
+    <description>SilverStripe control statement</description>
+</snippet>
