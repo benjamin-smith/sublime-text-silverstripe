@@ -2,13 +2,26 @@
 
 SS versions 3.x and 2.4.x are supported.
 
-###Features
+##Features
+
 * Syntax highlighting for .ss files
 * Highlights SS markup within HTML attributes
 * High contrast colors against surrounding HTML markup
 * Snippets for inserting SS markup
 
-### Snippets
+## Installation
+
+With [Package Control](http://wbond.net/sublime_packages/package_control) (recommended):
+
+1. Run "Package Control: Install Package" command, find and install `SilverStripe` plugin.
+2. Restart ST2 editor (if required)
+
+Or, manual installation:
+
+1. Clone or [download](https://github.com/benjamin-smith/sublime-text-silverstripe/archive/master.zip) git repo into your packages folder (in ST2, find Browse Packages... menu item to open this folder)
+2. Restart ST2 editor (if required)
+
+## Snippets
 
 Press tab after typing any of the following to generate markup:
 
@@ -21,6 +34,6 @@ Press tab after typing any of the following to generate markup:
 * `with`
 * `include`
 
-### Credits
+## Credits
 
 MUCH inspiration came from [nrw's Handlebars ST2 package](https://github.com/nrw/sublime-text-handlebars).
