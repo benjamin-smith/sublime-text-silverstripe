@@ -60,7 +60,7 @@
 		},
 		"single_control": {
 			"patterns": [
-				{ "match": "(<%\\s)(else|end_if|control|end_control|with|end_with|Loop|end_Loop|base_tag|require|cacheblock)?\\s?([a-zA-Z0-9_\\.\\$]*?)(\\(?)([a-zA-Z0-9_\\-,\\s]*)?(\\)?)(\\s%>)",
+				{ "match": "(<%\\s)(else|end_if|control|end_control|with|end_with|Loop|end_Loop|loop|end_loop|base_tag|require|cacheblock)?\\s?([a-zA-Z0-9_\\.\\$]*?)(\\(?)([a-zA-Z0-9_\\-,\\s]*)?(\\)?)(\\s%>)",
 				  "name": "source.ss.embedded.block",
 				  "captures": {
 				      "1": { "name": "support.constant.ss" },
