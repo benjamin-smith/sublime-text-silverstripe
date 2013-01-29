@@ -1,6 +1,6 @@
-#Sublime Text 2 SilverStripe Package
+#Sublime Text SilverStripe Package
 
-SS versions 3.x and 2.4.x are supported.
+SS versions 3.x and 2.4.x are supported. Works with Sublime Text versions 2 and 3 beta.
 
 ##Features
 
