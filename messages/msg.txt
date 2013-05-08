@@ -1,0 +1,8 @@
+SilverStripe Templates has been upgraded
+========================================
+
+New features:
+
+-- Emmet support
+-- Comment trigger for native SS comments (Cmd + / on Mac, Ctrl + / on PC)
+-- Support for partial caching syntax highlighting

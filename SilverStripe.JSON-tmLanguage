@@ -1,7 +1,7 @@
 {
 	"name": "SilverStripe",
 	"uuid": "9b9e9065-622f-479d-82f1-6c403382e932",
-	"scopeName": "source.ss",
+	"scopeName": "text.html.ss",
 	"fileTypes": ["ss"],
 	"patterns": [
 		{ "include": "#comments" },
@@ -9,6 +9,7 @@
 		{ "include": "#conditional" },
 		{ "include": "#single_control" },
 		{ "include": "#single_var" },
+		{ "include": "#partial_caching" },
 		{ "include": "#html_tags" }
 	],
 	"repository": {
@@ -21,10 +22,10 @@
 					"beginCaptures": {
 						"1": { "name": "punctuation.definition.comment.ss" }
 					},
-					"endCaptures": { 
+					"endCaptures": {
 						"1": { "name": "punctuation.definition.comment.ss" }
 					},
-					"patterns": [ 
+					"patterns": [
 						{ "match": "." },
 						{ "name": "invalid.illegal.bad-comments-or-CDATA.ss"}
 					]
@@ -41,7 +42,7 @@
 						"1": { "name": "support.constant.ss" },
 						"2": { "name": "support.function.ss" }
 					},
-					"endCaptures": { 
+					"endCaptures": {
 						"1": { "name": "support.constant.ss" }
 					},
 					"patterns": [
@@ -60,7 +61,7 @@
 		},
 		"single_control": {
 			"patterns": [
-				{ "match": "(<%\\s)(else|end_if|control|end_control|with|end_with|Loop|end_Loop|loop|end_loop|base_tag|require|cacheblock)?\\s?([a-zA-Z0-9_\\.\\$]*?)(\\(?)([a-zA-Z0-9_\\-,\\s]*)?(\\)?)(\\s%>)",
+				{ "match": "(<%\\s)(else|end_if|control|end_control|with|end_with|Loop|end_Loop|loop|end_loop|base_tag|require|cacheblock|cached)?\\s?([a-zA-Z0-9_\\.\\$]*?)(\\(?)([a-zA-Z0-9_\\-,\\s]*)?(\\)?)(\\s%>)",
 				  "name": "source.ss.embedded.block",
 				  "captures": {
 				      "1": { "name": "support.constant.ss" },
@@ -72,6 +73,21 @@
 				      "7": { "name": "support.constant.ss" }
 				   },
 				  "comment": "Single control keywords"
+				}
+			]
+		},
+		"partial_caching": {
+			"patterns": [
+				{ "match": "(<%\\s)(cacheblock|cached)\\s?('[a-zA-Z0-9]*?')?\\s?(,\\s?[a-zA-Z0-9]*?)?(\\s%>)",
+				  "name": "source.ss.embedded.block",
+				  "captures": {
+				      "1": { "name": "support.constant.ss" },
+				      "2": { "name": "support.function.ss" },
+				      "3": { "name": "variable.parameter.ss" },
+				      "4": { "name": "variable.parameter.ss" },
+				      "5": { "name": "support.constant.ss" }
+				   },
+				  "comment": "Special partial caching syntax"
 				}
 			]
 		},
@@ -117,10 +133,10 @@
 			"name": "string.quoted.double.html",
 			"begin": "\"",
 			"end": "\"",
-			"beginCaptures": { 
+			"beginCaptures": {
 				"0": { "name": "punctuation.definition.string.begin.html" }
 			},
-			"endCaptures": { 
+			"endCaptures": {
 				"0": { "name": "punctuation.definition.string.end.html" }
 			},
 			"patterns": [
@@ -135,11 +151,11 @@
 			"name": "string.quoted.single.html",
 			"begin": "'",
 			"end": "'",
-			"beginCaptures": { 
-				"0": { "name": "punctuation.definition.string.begin.html" } 
+			"beginCaptures": {
+				"0": { "name": "punctuation.definition.string.begin.html" }
 			},
-			"endCaptures": { 
-				"0": { "name": "punctuation.definition.string.end.html" } 
+			"endCaptures": {
+				"0": { "name": "punctuation.definition.string.end.html" }
 			},
 			"patterns": [
 				{ "include": "#comments" },
@@ -174,11 +190,11 @@
 					"contentName": "meta.toc-list.id.html",
 					"begin": "\"",
 					"end": "\"",
-					"beginCaptures": { 
-						"0": { "name": "punctuation.definition.string.begin.html" } 
+					"beginCaptures": {
+						"0": { "name": "punctuation.definition.string.begin.html" }
 					},
-					"endCaptures": { 
-						"0": { "name": "punctuation.definition.string.end.html" } 
+					"endCaptures": {
+						"0": { "name": "punctuation.definition.string.end.html" }
 					},
 					"patterns": [
 						{ "include": "#partial_and_var" }
@@ -189,11 +205,11 @@
 					"contentName": "meta.toc-list.id.html",
 					"begin": "'",
 					"end": "'",
-					"beginCaptures": { 
-						"0": { "name": "punctuation.definition.string.begin.html" } 
+					"beginCaptures": {
+						"0": { "name": "punctuation.definition.string.begin.html" }
 					},
-					"endCaptures": { 
-						"0": { "name": "punctuation.definition.string.end.html" } 
+					"endCaptures": {
+						"0": { "name": "punctuation.definition.string.end.html" }
 					},
 					"patterns": [
 						{ "include": "#comments" },
@@ -205,7 +221,7 @@
 				}
 			]
 	    },
-		"html_tags": { 
+		"html_tags": {
 			"patterns": [
 				{
 					"name": "comment.block.html",
@@ -214,10 +230,10 @@
 					"beginCaptures": {
 						"1": { "name": "punctuation.definition.comment.html" }
 					},
-					"endCaptures": { 
+					"endCaptures": {
 						"1": { "name": "punctuation.definition.comment.html" }
 					},
-					"patterns": [ 
+					"patterns": [
 						{ "match": "." },
 						{ "name": "invalid.illegal.bad-comments-or-CDATA.html"}
 					]
@@ -237,8 +253,8 @@
 						"4": { "name": "entity.name.tag.html" },
 						"5": { "name": "punctuation.definition.tag.end.html" }
 					},
-					"patterns": [ 
-						{ "include": "#tag_stuff" } 
+					"patterns": [
+						{ "include": "#tag_stuff" }
 					]
 				},
 				{
@@ -271,8 +287,8 @@
 						"1": { "name": "punctuation.definition.tag.begin.html" },
 						"2": { "name": "entity.name.tag.inline.any.html" }
 					},
-					"endCaptures": { 
-						"1": { "name": "punctuation.definition.tag.end.html" } 
+					"endCaptures": {
+						"1": { "name": "punctuation.definition.tag.end.html" }
 					},
 					"patterns": [ { "include": "#tag_stuff" } ]
 				},
@@ -285,8 +301,8 @@
 						"2": { "name": "entity.name.tag.other.html" }
 					},
 					"endCaptures": { "1": { "name": "punctuation.definition.tag.end.html" } },
-					"patterns": [ 
-						{ "include": "#tag_stuff" } 
+					"patterns": [
+						{ "include": "#tag_stuff" }
 					]
 				},
 				{

@@ -32,6 +32,10 @@
 		</dict>
 		<dict>
 			<key>include</key>
+			<string>#partial_caching</string>
+		</dict>
+		<dict>
+			<key>include</key>
 			<string>#html_tags</string>
 		</dict>
 	</array>
@@ -474,6 +478,48 @@
 				</dict>
 			</array>
 		</dict>
+		<key>partial_caching</key>
+		<dict>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>captures</key>
+					<dict>
+						<key>1</key>
+						<dict>
+							<key>name</key>
+							<string>support.constant.ss</string>
+						</dict>
+						<key>2</key>
+						<dict>
+							<key>name</key>
+							<string>support.function.ss</string>
+						</dict>
+						<key>3</key>
+						<dict>
+							<key>name</key>
+							<string>variable.parameter.ss</string>
+						</dict>
+						<key>4</key>
+						<dict>
+							<key>name</key>
+							<string>variable.parameter.ss</string>
+						</dict>
+						<key>5</key>
+						<dict>
+							<key>name</key>
+							<string>support.constant.ss</string>
+						</dict>
+					</dict>
+					<key>comment</key>
+					<string>Special partial caching syntax</string>
+					<key>match</key>
+					<string>(&lt;%\s)(cacheblock|cached)\s?('[a-zA-Z0-9]*?')?\s?(,\s?[a-zA-Z0-9]*?)?(\s%&gt;)</string>
+					<key>name</key>
+					<string>source.ss.embedded.block</string>
+				</dict>
+			</array>
+		</dict>
 		<key>single_control</key>
 		<dict>
 			<key>patterns</key>
@@ -520,7 +566,7 @@
 					<key>comment</key>
 					<string>Single control keywords</string>
 					<key>match</key>
-					<string>(&lt;%\s)(else|end_if|control|end_control|with|end_with|Loop|end_Loop|loop|end_loop|base_tag|require|cacheblock)?\s?([a-zA-Z0-9_\.\$]*?)(\(?)([a-zA-Z0-9_\-,\s]*)?(\)?)(\s%&gt;)</string>
+					<string>(&lt;%\s)(else|end_if|control|end_control|with|end_with|Loop|end_Loop|loop|end_loop|base_tag|require|cacheblock|cached)?\s?([a-zA-Z0-9_\.\$]*?)(\(?)([a-zA-Z0-9_\-,\s]*)?(\)?)(\s%&gt;)</string>
 					<key>name</key>
 					<string>source.ss.embedded.block</string>
 				</dict>
@@ -797,7 +843,7 @@
 		</dict>
 	</dict>
 	<key>scopeName</key>
-	<string>source.ss</string>
+	<string>text.html.ss</string>
 	<key>uuid</key>
 	<string>9b9e9065-622f-479d-82f1-6c403382e932</string>
 </dict>
