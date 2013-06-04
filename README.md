@@ -7,7 +7,6 @@ SS versions 3.x and 2.4.x are supported. Works with Sublime Text v2/3.
 * Syntax highlighting for .ss files
 * Highlights SS markup within HTML attributes
 * High contrast colors against surrounding HTML markup
-* Snippets for inserting SS markup
 * Support for Emmet
 
 ## Installation
@@ -21,18 +20,6 @@ Or, manual installation:
 
 1. Clone or [download](https://github.com/benjamin-smith/sublime-text-silverstripe/archive/master.zip) git repo into your packages folder (in Sublime Text, find Browse Packages... menu item to open this folder)
 2. Restart Sublime Text
-
-## Snippets
-
-Press tab after typing any of the following to generate markup:
-
-* `if`
-* `ifelse`
-* `ifelseif`
-* `control`
-* `Loop`
-* `with`
-* `include`
 
 ## Credits
 
