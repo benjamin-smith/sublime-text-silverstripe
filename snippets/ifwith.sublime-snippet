@@ -5,5 +5,5 @@
 <% end_if %>]]></content>
     <tabTrigger>ifloop</tabTrigger>
     <scope>text.html.ss</scope>
-    <description>SilverStripe if statement with loop statement</description>
+    <description>SilverStripe if statement with with statement</description>
 </snippet>

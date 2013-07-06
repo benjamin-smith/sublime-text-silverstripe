@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[\$gridFieldConfig = new GridFieldConfig_RelationEditor();
+\$list = \$this->${1:Name}();
+\$gridField = new GridField('${1:Name}', '${1:Name}', \$list, \$gridFieldConfig);
+\$fields->addFieldToTab('Root.${1:Name}', \$gridField);]]></content>
+    <tabTrigger>gridfieldrelationeditor</tabTrigger>
+    <scope>source.php</scope>
+    <description>SilverStripe GridField relation editor</description>
+</snippet>

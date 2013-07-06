@@ -1,5 +1,6 @@
 <snippet>
-	<content><![CDATA[<% if \$${1:PaginatedPages}.MoreThanOnePage %>
+	<content><![CDATA[
+<% if \$${1:PaginatedPages}.MoreThanOnePage %>
     <% if \$${1:PaginatedPages}.NotFirstPage %>
         <a class="prev" href="\$${1:PaginatedPages}.PrevLink">Prev</a>
     <% end_if %>
