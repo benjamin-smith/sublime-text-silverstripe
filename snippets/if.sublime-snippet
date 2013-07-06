@@ -3,6 +3,6 @@
     ${2:content}
 <% end_if %>]]></content>
     <tabTrigger>if</tabTrigger>
-    <scope>source.ss</scope>
+    <scope>text.html.ss</scope>
     <description>SilverStripe if statement</description>
 </snippet>

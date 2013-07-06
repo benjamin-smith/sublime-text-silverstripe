@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[<% if ${1:condition} %>
+    <% loop ${1:condition} %>
+    <% end_loop %>
+<% end_if %>]]></content>
+    <tabTrigger>ifloop</tabTrigger>
+    <scope>text.html.ss</scope>
+    <description>SilverStripe if statement with loop statement</description>
+</snippet>

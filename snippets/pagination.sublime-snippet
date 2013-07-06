@@ -1,0 +1,25 @@
+<snippet>
+	<content><![CDATA[<% if \$${1:PaginatedPages}.MoreThanOnePage %>
+    <% if \$${1:PaginatedPages}.NotFirstPage %>
+        <a class="prev" href="\$${1:PaginatedPages}.PrevLink">Prev</a>
+    <% end_if %>
+    <% loop \$${1:PaginatedPages}.Pages %>
+        <% if \$CurrentBool %>
+            \$PageNum
+        <% else %>
+            <% if \$Link %>
+                <a href="\$Link">\$PageNum</a>
+            <% else %>
+                ...
+            <% end_if %>
+        <% end_if %>
+        <% end_loop %>
+    <% if \$${1:PaginatedPages}.NotLastPage %>
+        <a class="next" href="\$${1:PaginatedPages}.NextLink">Next</a>
+    <% end_if %>
+<% end_if %>
+]]></content>
+	<tabTrigger>pagination</tabTrigger>
+	<scope>text.html.ss</scope>
+	<description>My Fancy Snippet</description>
+</snippet>

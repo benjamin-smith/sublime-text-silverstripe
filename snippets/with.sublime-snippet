@@ -3,6 +3,6 @@
     ${2:content}
 <% end_with %>]]></content>
     <tabTrigger>with</tabTrigger>
-    <scope>source.ss</scope>
+    <scope>text.html.ss</scope>
     <description>SilverStripe with statement</description>
 </snippet>

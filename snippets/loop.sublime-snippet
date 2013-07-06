@@ -3,6 +3,6 @@
     ${2:content}
 <% end_Loop %>]]></content>
     <tabTrigger>loop</tabTrigger>
-    <scope>source.ss</scope>
+    <scope>text.html.ss</scope>
     <description>SilverStripe loop statement</description>
 </snippet>

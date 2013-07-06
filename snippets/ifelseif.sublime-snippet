@@ -7,6 +7,6 @@
     ${5:false}
 <% end_if %>]]></content>
     <tabTrigger>ifelseif</tabTrigger>
-    <scope>source.ss</scope>
+    <scope>text.html.ss</scope>
     <description>SilverStripe if/else_if/else statement</description>
 </snippet>
