@@ -8,6 +8,7 @@ SS versions 3.x and 2.4.x are supported. Works with Sublime Text v2/3.
 * Highlights SS markup within HTML attributes
 * High contrast colors against surrounding HTML markup
 * Support for Emmet
+* Snippets for template files and PHP code
 
 ## Installation
 
@@ -16,10 +17,27 @@ With [Package Control](http://wbond.net/sublime_packages/package_control) (recom
 1. Run "Package Control: Install Package" command, find and install `SilverStripe` plugin.
 2. Restart Sublime Text
 
-Or, manual installation:
+## Snippets
 
-1. Clone or [download](https://github.com/benjamin-smith/sublime-text-silverstripe/archive/master.zip) git repo into your packages folder (in Sublime Text, find Browse Packages... menu item to open this folder)
-2. Restart Sublime Text
+Press tab after typing any of the following to generate markup:
+
+**Template files**
+
+* `if`
+* `ifelse`
+* `ifelseif`
+* `control`
+* `loop`
+* `with`
+* `include`
+* `ifloop`
+* `ifwith`
+* `pagination`
+
+**PHP code**
+
+* `gridfieldrecordeditor`
+* `gridfieldrelationeditor`
 
 ## Credits
 

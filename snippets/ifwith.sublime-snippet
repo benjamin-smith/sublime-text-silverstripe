@@ -3,7 +3,7 @@
     <% with ${1:condition} %>
     <% end_with %>
 <% end_if %>]]></content>
-    <tabTrigger>ifloop</tabTrigger>
+    <tabTrigger>ifwith</tabTrigger>
     <scope>text.html.ss</scope>
     <description>SilverStripe if statement with with statement</description>
 </snippet>
