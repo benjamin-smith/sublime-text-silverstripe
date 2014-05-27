@@ -4,6 +4,8 @@ SS versions 3.x and 2.4.x are supported. Works with Sublime Text v2/3.
 
 ##Features
 
+![Screenshot of Sublime Text Silverstripe in action!](https://raw.githubusercontent.com/benjamin-smith/sublime-text-silverstripe/master/screenshot.png)
+
 * Syntax highlighting for .ss files
 * Highlights SS markup within HTML attributes
 * High contrast colors against surrounding HTML markup
