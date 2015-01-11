@@ -42,6 +42,14 @@
 			<key>include</key>
 			<string>#html_tags</string>
 		</dict>
+		<dict>
+			<key>include</key>
+			<string>#css</string>
+		</dict>
+		<dict>
+			<key>include</key>
+			<string>#javascript</string>
+		</dict>
 	</array>
 	<key>repository</key>
 	<dict>
@@ -133,6 +141,65 @@
 							<string>([a-zA-Z0-9_\(\)\$"])</string>
 							<key>name</key>
 							<string>variable.parameter.ss</string>
+						</dict>
+					</array>
+				</dict>
+			</array>
+		</dict>
+		<key>css</key>
+		<dict>
+			<key>begin</key>
+			<string>(?:^\s+)?(&lt;)((?i:style))\b(?![^&gt;]*/&gt;)</string>
+			<key>captures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>punctuation.definition.tag.html</string>
+				</dict>
+				<key>2</key>
+				<dict>
+					<key>name</key>
+					<string>entity.name.tag.style.html</string>
+				</dict>
+				<key>3</key>
+				<dict>
+					<key>name</key>
+					<string>punctuation.definition.tag.html</string>
+				</dict>
+			</dict>
+			<key>end</key>
+			<string>(&lt;/)((?i:style))(&gt;)(?:\s*\n)?</string>
+			<key>name</key>
+			<string>source.css.embedded.html</string>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>include</key>
+					<string>#tag-stuff</string>
+				</dict>
+				<dict>
+					<key>begin</key>
+					<string>(&gt;)</string>
+					<key>beginCaptures</key>
+					<dict>
+						<key>1</key>
+						<dict>
+							<key>name</key>
+							<string>punctuation.definition.tag.html</string>
+						</dict>
+					</dict>
+					<key>end</key>
+					<string>(?=&lt;/(?i:style))</string>
+					<key>patterns</key>
+					<array>
+						<dict>
+							<key>include</key>
+							<string>#embedded-code</string>
+						</dict>
+						<dict>
+							<key>include</key>
+							<string>source.css</string>
 						</dict>
 					</array>
 				</dict>
@@ -509,6 +576,103 @@
 						<dict>
 							<key>include</key>
 							<string>#single_var</string>
+						</dict>
+					</array>
+				</dict>
+			</array>
+		</dict>
+		<key>javascript</key>
+		<dict>
+			<key>begin</key>
+			<string>(?:^\s+)?(&lt;)((?i:script))\b(?![^&gt;]*/&gt;)</string>
+			<key>beginCaptures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>punctuation.definition.tag.html</string>
+				</dict>
+				<key>2</key>
+				<dict>
+					<key>name</key>
+					<string>entity.name.tag.script.html</string>
+				</dict>
+			</dict>
+			<key>end</key>
+			<string>(?&lt;=&lt;/(script|SCRIPT))(&gt;)(?:\s*\n)?</string>
+			<key>endCaptures</key>
+			<dict>
+				<key>2</key>
+				<dict>
+					<key>name</key>
+					<string>punctuation.definition.tag.html</string>
+				</dict>
+			</dict>
+			<key>name</key>
+			<string>source.js.embedded.html</string>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>include</key>
+					<string>#tag-stuff</string>
+				</dict>
+				<dict>
+					<key>begin</key>
+					<string>(?&lt;!&lt;/(?:script|SCRIPT))(&gt;)</string>
+					<key>captures</key>
+					<dict>
+						<key>1</key>
+						<dict>
+							<key>name</key>
+							<string>punctuation.definition.tag.html</string>
+						</dict>
+						<key>2</key>
+						<dict>
+							<key>name</key>
+							<string>entity.name.tag.script.html</string>
+						</dict>
+					</dict>
+					<key>end</key>
+					<string>(&lt;/)((?i:script))</string>
+					<key>patterns</key>
+					<array>
+						<dict>
+							<key>captures</key>
+							<dict>
+								<key>1</key>
+								<dict>
+									<key>name</key>
+									<string>punctuation.definition.comment.js</string>
+								</dict>
+							</dict>
+							<key>match</key>
+							<string>(//).*?((?=&lt;/script)|$\n?)</string>
+							<key>name</key>
+							<string>comment.line.double-slash.js</string>
+						</dict>
+						<dict>
+							<key>begin</key>
+							<string>/\*</string>
+							<key>captures</key>
+							<dict>
+								<key>0</key>
+								<dict>
+									<key>name</key>
+									<string>punctuation.definition.comment.js</string>
+								</dict>
+							</dict>
+							<key>end</key>
+							<string>\*/|(?=&lt;/script)</string>
+							<key>name</key>
+							<string>comment.block.js</string>
+						</dict>
+						<dict>
+							<key>include</key>
+							<string>#php</string>
+						</dict>
+						<dict>
+							<key>include</key>
+							<string>source.js</string>
 						</dict>
 					</array>
 				</dict>

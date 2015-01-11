@@ -4,6 +4,9 @@
         <title>$Title</title>
         <% require themedCSS('LeftNavMenu') %>
         $MetaTagsdiv
+        <style type="text/css">
+            body { color: red; }
+        </style>
     </head>
     <body>
     <div id="Container">
@@ -89,5 +92,10 @@
             <p>Copyright $Now.Year</p>
         </div>
     </div>
+
+    <script type="text/javascript">
+        console.log('JavaScript highlighting FTW');
+    </script>
+
     </body>
 </html>

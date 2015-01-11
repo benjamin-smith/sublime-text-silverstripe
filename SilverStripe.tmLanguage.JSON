@@ -11,7 +11,9 @@
 		{ "include": "#single_var" },
 		{ "include": "#i18n" },
 		{ "include": "#partial_caching" },
-		{ "include": "#html_tags" }
+		{ "include": "#html_tags" },
+		{ "include": "#css" },
+		{ "include": "#javascript" }
 	],
 	"repository": {
 		"comments": {
@@ -140,6 +142,108 @@
 				}
 			]
 		},
+
+
+		"css": {
+            "begin": "(?:^\\s+)?(<)((?i:style))\\b(?![^>]*/>)",
+            "captures": {
+                "1": {
+                    "name": "punctuation.definition.tag.html"
+                },
+                "2": {
+                    "name": "entity.name.tag.style.html"
+                },
+                "3": {
+                    "name": "punctuation.definition.tag.html"
+                }
+            },
+            "end": "(</)((?i:style))(>)(?:\\s*\\n)?",
+            "name": "source.css.embedded.html",
+            "patterns": [
+                {
+                    "include": "#tag-stuff"
+                },
+                {
+                    "begin": "(>)",
+                    "beginCaptures": {
+                        "1": {
+                            "name": "punctuation.definition.tag.html"
+                        }
+                    },
+                    "end": "(?=</(?i:style))",
+                    "patterns": [
+                        {
+                            "include": "#embedded-code"
+                        },
+                        {
+                            "include": "source.css"
+                        }
+                    ]
+                }
+            ]
+        },
+        "javascript": {
+            "begin": "(?:^\\s+)?(<)((?i:script))\\b(?![^>]*/>)",
+            "beginCaptures": {
+                "1": {
+                    "name": "punctuation.definition.tag.html"
+                },
+                "2": {
+                    "name": "entity.name.tag.script.html"
+                }
+            },
+            "end": "(?<=</(script|SCRIPT))(>)(?:\\s*\\n)?",
+            "endCaptures": {
+                "2": {
+                    "name": "punctuation.definition.tag.html"
+                }
+            },
+            "name": "source.js.embedded.html",
+            "patterns": [
+                {
+                    "include": "#tag-stuff"
+                },
+                {
+                    "begin": "(?<!</(?:script|SCRIPT))(>)",
+                    "captures": {
+                        "1": {
+                            "name": "punctuation.definition.tag.html"
+                        },
+                        "2": {
+                            "name": "entity.name.tag.script.html"
+                        }
+                    },
+                    "end": "(</)((?i:script))",
+                    "patterns": [
+                        {
+                            "captures": {
+                                "1": {
+                                    "name": "punctuation.definition.comment.js"
+                                }
+                            },
+                            "match": "(//).*?((?=</script)|$\\n?)",
+                            "name": "comment.line.double-slash.js"
+                        },
+                        {
+                            "begin": "/\\*",
+                            "captures": {
+                                "0": {
+                                    "name": "punctuation.definition.comment.js"
+                                }
+                            },
+                            "end": "\\*/|(?=</script)",
+                            "name": "comment.block.js"
+                        },
+                        {
+                            "include": "#php"
+                        },
+                        {
+                            "include": "source.js"
+                        }
+                    ]
+                }
+            ]
+        },
 
 
 		"string_double_quoted": {
