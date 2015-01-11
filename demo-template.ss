@@ -3,7 +3,7 @@
         <% base_tag %>
         <title>$Title</title>
         $MetaTagsdiv
-        <% require themedCSS(LeftNavMenu) %>
+        <% require themedCSS('LeftNavMenu') %>
     </head>
     <body>
     <div id="Container">
