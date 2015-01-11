@@ -1,6 +1,0 @@
-SilverStripe Templates has been upgraded
-========================================
-
-New features:
-
--- Updated snippets (thanks @benmanu!) See the full list on GitHub (https://github.com/benjamin-smith/sublime-text-silverstripe)

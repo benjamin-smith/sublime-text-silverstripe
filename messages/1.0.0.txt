@@ -1,0 +1,8 @@
+SilverStripe Templates has been upgraded!
+=========================================
+
+Version 1.0 Release Notes
+
+-- add JS & CSS highlighting support
+-- add `<%t` function support
+-- Several bug fixes
