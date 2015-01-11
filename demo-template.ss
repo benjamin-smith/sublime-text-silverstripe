@@ -2,8 +2,8 @@
     <head>
         <% base_tag %>
         <title>$Title</title>
-        $MetaTagsdiv
         <% require themedCSS('LeftNavMenu') %>
+        $MetaTagsdiv
     </head>
     <body>
     <div id="Container">
@@ -21,7 +21,7 @@
         </div>
         <div class="typography">
 
-            <%-- Preperties --%>
+            <%-- Properties --%>
 
             $Property
             $Property(param)
@@ -80,6 +80,9 @@
             <% cacheblock 'slowoperation', LastEdited %>
             $SlowOperation
             <% end_cacheblock %>
+
+            <%-- i18n --%>
+            <%t Column.PluralTitle "Columns" %>
 
         </div>
         <div id="Footer">
