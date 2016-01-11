@@ -66,7 +66,7 @@
 			"patterns": [
 				{
 				  "name": "source.ss.embedded.block",
-				  "match": "(<%\\s)(else|end_if|control|end_control|with|end_with|Loop|end_Loop|loop|end_loop|base_tag|require|cacheblock|cached|end_cacheblock)(.*)(\\s%>)",
+				  "match": "(<%\\s)(else|end_if|control|end_control|with|end_with|Loop|end_Loop|loop|end_loop|base_tag|require|cacheblock|end_cacheblock|cached|end_cached|uncached|end_uncached)(.*)(\\s%>)",
 				  "captures": {
 				      "1": { "name": "support.constant.ss" },
 				      "2": { "name": "support.function.ss" },
