@@ -751,7 +751,7 @@
 					<key>comment</key>
 					<string>Single control keywords</string>
 					<key>match</key>
-					<string>(&lt;%\s)(else|end_if|control|end_control|with|end_with|Loop|end_Loop|loop|end_loop|base_tag|require|cacheblock|cached|end_cacheblock)(.*)(\s%&gt;)</string>
+					<string>(&lt;%\s)(else|end_if|control|end_control|with|end_with|Loop|end_Loop|loop|end_loop|base_tag|require|cacheblock|end_cacheblock|cached|end_cached|uncached|end_uncached)(.*)(\s%&gt;)</string>
 					<key>name</key>
 					<string>source.ss.embedded.block</string>
 				</dict>
