@@ -1,8 +1,8 @@
-#Sublime Text SilverStripe Package
+# Sublime Text SilverStripe Package
 
 SS versions 3.x and 2.4.x are supported. Works with Sublime Text v2/3.
 
-##Features
+## Features
 
 ![Screenshot of Sublime Text Silverstripe in action!](https://raw.githubusercontent.com/benjamin-smith/sublime-text-silverstripe/master/screenshot.png)
 
